@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Para usar medidas Rem: 1 rem equivale a 10px; */
+
+html {
+    font-size: 62.5%;
+    /* font-size: 90%; */
+}
+
+.div_contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title {
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 7rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: blue;
+}
+
+.sub_title {
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.div_img_text {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: right;
+    font-family: fantasy;
+    font-style: normal;
+
+}
+
+.img {
+    padding: 50px;
+    height: 35rem;
+    width: 30rem;
+    margin: 10px auto;
+    display: block;
+    
+}
+
+.div_p {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    justify-content: space-around;
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 1.6rem;
+    /* background-color: rgb(250, 250, 7);  */
+    padding: 5rem;
+    /* width: 50rem; */
+    height: 20rem;
+}
+
+.title_text {
+    display: flex;
+    justify-content: left;
+    /*flex start*/
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 3rem;
+    height: 5.8rem;
+    padding-top: 6rem;
+    color: red;
+}
+
+.p1 {
+    display: flex;
+    justify-content: left;
+}
+
+.p2 {
+    display: flex;
+    justify-content: left;
+}
+
+.p3 {
+    display: flex;
+    justify-content: left;
+}
+
+.p4 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Para usar medidas Rem: 1 rem equivale a 10px; */
+
+.div_end {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.input_name {
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 4rem;
+    text-align: center;
+    width: 53.8rem;
+    height: 8rem;
+    border-radius: 1rem;
+}
+
+.btn_play {
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 4rem;
+    text-align: center;
+    width: 27.9rem;
+    height: 6.4rem;
+    border-radius: 1.5rem;
+
+}
+
+span {
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 4rem;
+}
+     /*padre*/
+/* .div_container_play div {      
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(238, 255, 0);
+    width: 70%;
+    margin: auto;
+    height: 70%;
+    padding: 1rem;
+    border: 0.3rem solid rgb(25, 0, 255);
+    border-radius: 1rem;
+} */
+
+   /* .card,.pokebola {   hijo */
+/* flex:0 0 15%;  
+    margin-bottom: 5%;
+    height: 20rem;  
+    width: 20rem;  
+    padding: 0.2rem;
+    border: 0.2rem solid;
+    border-radius: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;  */
+/*}  */
+
+
+/* .pokemon_name {
+    font-family: fantasy;
+    font-style: normal;
+    font-size: 2rem;
+
+} */
+/* .div_conteiner_play{
+    background: rgba(77, 173, 91, 1);
+    height: 70%;
+
+
+} */
+/* .div_container_play div {
+    background: rgba(77, 173, 91, 1);
+} */
+.contenedor-cards {
+    display: grid;
+    grid-template-columns: repeat(6,minmax(9rem , 1fr) );
+    grid-template-rows: 9rem 9rem 9rem;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    row-gap: 5rem;
+    margin-inline: 1.25rem;
+    padding: 1rem;
+    border: 2px solid  rgba(230, 188, 47, 1);
+    height: 45rem;
+    background: rgba(230, 188, 47, 1);
+    width: 90rem;
+    position: absolute;
+ 
+}
+
+.contenedor-cards{
+    /* position: absolute; */
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform-style: preserve-3d; */
+}
+.face {
+     width: 15rem;
+    padding: 0.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: absolute;
+    backface-visibility: hidden;
+}
+/* .card {
+    /* position: relative; */
+    /* margin: 5%;
+    padding: 0.2rem;
+    width: 100%;
+    height: 100%;
+    
+} */ */
+card div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition:transform 2s linear;
+    
+    
+}
+
+img {
+    border: 0.6rem solid  rgba(236, 70, 4, 0.808); 
+    width: 12rem;
+   
+}
+
+ .card .front {
+    transform: perspective(5rem)rotateY(0deg);
+}
+.card .back {
+    transform : perspective(5rem)rotateY(180deg);
+}
+.card:hover .front {
+    transform: perspective(5rem)rotateY(180deg);
+}
+.card:hover .back {
+    transform: perspective(5rem)rotateY(360deg);
+}
+    
