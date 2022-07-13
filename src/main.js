@@ -18,14 +18,14 @@ root.appendChild(div_container_play);
 
 const cards = document.querySelectorAll('.card');
  for (let i =0; i<cards.length;i++){
-    cards[i].addEventListener('click',(e)=>{ //añadiendo evento escuchador a cada card
-        console.log(e.target.id);
+    cards[i].addEventListener('click', function (e) { //añadiendo evento escuchador a cada card
+        this.classList.toggle('show');
         
     })
  }
 
 
-div_container_play.appendChild(contenedor-cards);
+
 
 
 
