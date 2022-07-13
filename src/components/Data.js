@@ -25,19 +25,16 @@ const Data = () => {
   for (let i = 0; i < sortedPokemon.length; i++) {
     //crear un elemento para la card de pokemon
     //agregar las propiedades de la card de pokemon
-      //Cartas de pokemon con display none
     //crear un elemento para la card de pokebola  
     //agregar las propiedades de la card de pokebola
-      //cartas de pokebola display block
     //carta de pokebola relacionada con una carta de pokemon
-    //al darle click a carta pokebola ,el display de carta pokebola cambiar a none y display de pokemon relacionada a pokebola debe cambiar a block
+    //al darle click a la carta se debe voltear
     name = sortedPokemon[i].id;
     img = sortedPokemon[i].image;
     color = sortedPokemon[i].bgColor;
     
-    //contendor pokemon play
-    const pokemonPlay = document.createElement('div');//ojo
-    pokemonPlay.className = "pokemonPlay";//ojo
+    
+    
 
     //creando un div card,para guardar pokemon y pokebola
     const card =document.createElement('div');
@@ -47,7 +44,7 @@ const Data = () => {
     const pokemon = document.createElement("div");
     pokemon.className = "face back";
     pokemon.setAttribute("id", "back");
-    // pokemon.style.display = 'none';
+
     //Creando variable para presentar imagen de pokemon
     const imagePokemon = document.createElement("img");
     imagePokemon.src = `${img}`;
@@ -67,9 +64,8 @@ const Data = () => {
     card.appendChild(pokebola);
     cards.appendChild(card);
     
-    // contenedor-cards.appendChild(cards);//ojo
-    // pokemonPlay.appendChild(contenedor-cards)//ojo
-
+  
+    
     
   };
 
