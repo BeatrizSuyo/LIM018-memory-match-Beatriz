@@ -203,7 +203,7 @@ span {
     /* transform-style: preserve-3d; */
 }
 .face {
-     width: 15rem;
+    width: 15rem;
     padding: 0.2rem;
     text-align: center;
     margin-bottom: 1.5rem;
@@ -234,7 +234,7 @@ img {
    
 }
 
- .card .front {
+.card .front {
     transform: perspective(5rem)rotateY(0deg);
 }
 .card .back {

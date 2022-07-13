@@ -16,13 +16,7 @@ div_container_play.innerHTML = Data().outerHTML;//escribo sobre el div contenedo
 root.appendChild(div_container_play);
 
 
-const cards = document.querySelectorAll('.card');
- for (let i =0; i<cards.length;i++){
-    cards[i].addEventListener('click',(e)=>{ //añadiendo evento escuchador a cada card
-        console.log(e.target.id);
-        
-    })
- }
+
 
 
 div_container_play.appendChild(contenedor-cards);
