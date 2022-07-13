@@ -191,11 +191,20 @@ span {
 }
 
 .contenedor-cards{
-    /* position: absolute; */
+    
      top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* transform-style: preserve-3d; */
+
+}
+.card {
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: transform 1s;
+
+}
+.card.show{
+    transform: rotateY(180deg);
 }
 .face {
      width: 15rem;
@@ -205,23 +214,10 @@ span {
     position: absolute;
     backface-visibility: hidden;
 }
-/* .card {
-    /* position: relative; */
-    /* margin: 5%;
-    padding: 0.2rem;
-    width: 100%;
-    height: 100%;
-    
-} */ 
-card div {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transition:linear;
-    /* transition:transform 2s linear; */
-    
+.back {
+    transform: rotateY(180deg);
 }
+
 
 img {
     border: 0.6rem solid  rgba(236, 70, 4, 0.808); 
@@ -229,16 +225,4 @@ img {
    
 }
 
- .card .front {
-    transform: perspective(5rem)rotateY(0deg);
-}
-.card .back {
-    transform : perspective(5rem)rotateY(180deg);
-}
-.card:hover .front {
-    transform: perspective(5rem)rotateY(180deg);
-}
-.card:hover .back {
-    transform: perspective(5rem)rotateY(360deg);
-}
     
