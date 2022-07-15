@@ -20,6 +20,7 @@ const Data = () => {
     let name = "";
     let img = "";
     let color = "";
+    
  
   
   for (let i = 0; i < sortedPokemon.length; i++) {
@@ -34,16 +35,15 @@ const Data = () => {
     color = sortedPokemon[i].bgColor;
     
     
-    
-
     //creando un div card,para guardar pokemon y pokebola
     const card =document.createElement('div');
     card.className = "card";
+    card.setAttribute("id", name);
 
     //Creando div "pokemon -cara posterior(back face)"
     const pokemon = document.createElement("div");
     pokemon.className = "face back";
-    pokemon.setAttribute("id", "back");
+    pokemon.setAttribute("id", name);
 
     //Creando variable para presentar imagen de pokemon
     const imagePokemon = document.createElement("img");
@@ -56,6 +56,7 @@ const Data = () => {
     //Creando variable para presentar imagen de pokebola
     const imagenPokebola  = document.createElement("img");
     imagenPokebola.src = "./img_pokebola1.png";
+    imagenPokebola.setAttribute("id",name);
     pokebola.appendChild(imagenPokebola);
 
     
