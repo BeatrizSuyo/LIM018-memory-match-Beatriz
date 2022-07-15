@@ -49,7 +49,7 @@ html {
 
 .img {
     padding: 50px;
-    height: 35rem;
+    height: 35rem;/*prueba*/
     width: 30rem;
     margin: 10px auto;
     display: block;
@@ -137,18 +137,10 @@ span {
     font-size: 4rem;
 }
      /*padre*/
-/* .div_container_play div {      
-     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: rgb(238, 255, 0);
-    width: 70%;
-    margin: auto;
-    height: 70%;
-    padding: 1rem;
-    border: 0.3rem solid rgb(25, 0, 255);
-    border-radius: 1rem;
-} */
+ .div_container_play {      
+    background-color: rgb(118, 163, 231);
+    height: 60rem;
+}
 
    /* .card,.pokebola {   hijo */
 /* flex:0 0 15%;  
@@ -169,10 +161,13 @@ span {
     font-size: 2rem;
 
 } */
+.imgTitulo {
+    /* display: block;
+    justify-self:center; */
+    width: fit-content;
+    height: 8rem;
+}
 
-/* .div_container_play div {
-    background: rgba(77, 173, 91, 1);
-} */
 .contenedor-cards {
     display: grid;
     grid-template-columns: repeat(6,minmax(9rem , 1fr) );
@@ -182,9 +177,11 @@ span {
     row-gap: 5rem;
     margin-inline: 1.25rem;
     padding: 1rem;
-    border: 2px solid  rgba(230, 188, 47, 1);
+    border: 0.1rem transparent  rgb(228, 226, 198);
     height: 45rem;
-    background: rgba(230, 188, 47, 1);
+    background-image: url(fondo_pokemon.jpg);
+    background-repeat:round;
+    background-size: 90rem; 
     width: 90rem;
     position: absolute;
  
@@ -200,7 +197,7 @@ span {
 .card {
     transform-style: preserve-3d;
     cursor: pointer;
-    transition: transform 1s;
+    transition: transform 3s;/* el transform tarda 1s en rotar*/
 
 }
 .card.show{
@@ -215,14 +212,14 @@ span {
     backface-visibility: hidden;
 }
 .back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg);/*siempre este rotado,de espalda*/
 }
 
 
 img {
-    border: 0.6rem solid  rgba(236, 70, 4, 0.808); 
+    /* border: 0.6rem solid  rgba(236, 70, 4, 0.808);  */
+    border-radius: 1rem;
     width: 12rem;
    
 }
 
-    
