@@ -16,10 +16,12 @@ const img = document.createElement('img');
     img.className = 'imgTitulo';
     img.src = 'titulo Pokemon Match.png';
     img.alt = 'Pokemon Match';
-    
 div_container_play.appendChild(img);
 
 root.appendChild(div_container_play);
+
+//nuevo
+
 
 let primeraCartaSeleccionada = null; // guarda el elemento de la ultima carta volteada
 
@@ -43,7 +45,7 @@ const cards = document.querySelectorAll('.card');//validar card
       cards[i].classList.toggle('show');
    
       if (primeraCartaSeleccionada === null) { // si la primeraCartaSeleccionada esta vacia estamos voletando la primera carta
-            // element.closest(selector) retorna el elemento padre mas cercano que encuentro con el selector
+            // element.closest(selector) //retorna el elemento padre mas cercano que encuentro con el selector
             primeraCartaSeleccionada = e.target.closest('.card');
       } else { // si la primeraCartaSeleccionada no esta vacia estamos voletando la segunda carta
          if (primeraCartaSeleccionada === e.target) {
@@ -57,7 +59,7 @@ const cards = document.querySelectorAll('.card');//validar card
                segundaCarta.closest('.card').classList.remove('show')
             }, 3000)
             
-            primeraCartaSeleccionada = null
+            primeraCartaSeleccionada = null;
          }
       }
 })

@@ -12,6 +12,7 @@ const Data = () => {
 
     const sortedPokemon = shuffle(myArr);
     // console.log(sortedPokemon)
+    
 
     //Dibujar cartas -tablero de cartas
     const cards = document.createElement('div');
