@@ -8,6 +8,18 @@ import Data from './components/Data.js';
 
 let root = document.getElementById('root');//el contenedor general de nuestra aplicación
 
+// let btn_jugar = docuemnt.getElementById("botonInicial");
+// btn_jugar.addEventListener("click", jugar);
+// let pageOne = document.getElementById("pag1");
+// let pageTwo = document.getElementById("pag2");
+
+// function jugar(){
+//    pageOne.style.display = "none";
+//    pageTwo.style.display = "block";
+// }
+
+
+
 const div_container_play = document.createElement('div'); //contenedor grande
 div_container_play.className = "div_container_play";
 div_container_play.innerHTML = Data().outerHTML;//escribo sobre el contenedor
@@ -18,9 +30,10 @@ const img = document.createElement('img');
     img.alt = 'Pokemon Match';
 div_container_play.appendChild(img);
 
-root.appendChild(div_container_play);
+root.appendChild(div_container_play);//ok
+// vista.appendChild(div_container_play);//nuevo
 
-//nuevo
+//nu
 
 
 let primeraCartaSeleccionada = null; // guarda el elemento de la ultima carta volteada
@@ -46,14 +59,19 @@ const cards = document.querySelectorAll('.card');//validar card
    
       if (primeraCartaSeleccionada === null) { // si la primeraCartaSeleccionada esta vacia estamos voletando la primera carta
             // element.closest(selector) //retorna el elemento padre mas cercano que encuentro con el selector
+           
             primeraCartaSeleccionada = e.target.closest('.card');
+            // console.log(primeraCartaSeleccionada);
+            // primeraCartaSeleccionada = e.target.id;
+            // console.log(primeraCartaSeleccionada);
       } else { // si la primeraCartaSeleccionada no esta vacia estamos voletando la segunda carta
-         if (primeraCartaSeleccionada === e.target) {
-            console.log('aqui va tarjetas iguales')
-         } else{ 
+         if (primeraCartaSeleccionada === e.target) { //add id
+            console.log('aqui va tarjetas iguales');
+         } else{
+            
             console.log('no son iguales')
-            const primeraCarta = primeraCartaSeleccionada
-            const segundaCarta = e.target
+            const primeraCarta = primeraCartaSeleccionada;
+            const segundaCarta = e.target; //add id
             setTimeout(() => {
                primeraCarta.classList.remove('show')
                segundaCarta.closest('.card').classList.remove('show')
