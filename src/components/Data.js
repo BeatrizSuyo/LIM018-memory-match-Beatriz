@@ -56,7 +56,7 @@ const Data = () => {
     pokebola.className = "face front";
     //Creando variable para presentar imagen de pokebola
     const imagenPokebola  = document.createElement("img");
-    imagenPokebola.src = "./img_pokebola1.png";
+    imagenPokebola.src = "./img_pokebola_front.png";
     imagenPokebola.setAttribute("id",name);
     pokebola.appendChild(imagenPokebola);
 
@@ -69,7 +69,7 @@ const Data = () => {
   
     
     
-  };
+  }
 
   
 
