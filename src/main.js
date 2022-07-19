@@ -17,7 +17,7 @@ function jugar(){
    pageOne.style.display = "none";
    root.style.display = "block";
 }
-//-------------------botn retroceder
+//-------------------bootn retroceder
 // document.getElementById("root").style.display = "none";
 // let botonRetroceder = document.getElementById("retroceder");
 // botonRetroceder.addEventListener("click", () => {
@@ -60,26 +60,29 @@ for (let i = 0; i < cards.length; i++) {
    cards[i].addEventListener('click', function (e) { //añadiendo evento escuchador a cada card
       // e.target es el elemento/carta al cual le dimos click
 
-      cards[i].classList.toggle('show');
-
+      cards[i].className +=' show';
+      console.log(cards[i].className);
       if (primeraCartaSeleccionada === null) { // si la primeraCartaSeleccionada esta vacia estamos volteando la primera carta
          // element.closest(selector) //retorna el elemento padre mas cercano que encuentro con el selector
-         // primeraCartaSeleccionada.setAttribute("name",nombre);
+      
          primeraCartaSeleccionada = e.target.closest('.card');
-          console.log(primeraCartaSeleccionada);
-        
+         
+          console.log( 'primera carta seleccionada',primeraCartaSeleccionada);
+          
       } else { // si la primeraCartaSeleccionada no esta vacia estamos volteando la segunda carta
-
-         if (primeraCartaSeleccionada.id=== e.target.id) {  
+         console.log ('segunda carta',e.target.closest('.card'));
+          e.target.closest('.card').className = 'show';
+          console.log(e.target.closest('.card').className);
+         if (primeraCartaSeleccionada.id === e.target.closest('.card').id) {  
             console.log('tarjetas iguales');
-              
+             
          } else {
             console.log('no son iguales')
             const primeraCarta = primeraCartaSeleccionada;
-            const segundaCarta = e.target;
+            const segundaCarta = e.target.closest('.card');
             setTimeout(() => {
                primeraCarta.classList.remove('show')
-               segundaCarta.closest('.card').classList.remove('show')
+               segundaCarta.classList.remove('show')
             }, 2000)                         
 
             primeraCartaSeleccionada = null;
