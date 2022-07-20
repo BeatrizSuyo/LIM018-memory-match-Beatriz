@@ -19,13 +19,12 @@ function jugar(){
 }
 //-------------------bootn retroceder
 // document.getElementById("root").style.display = "none";
-// let botonRetroceder = document.getElementById("retroceder");
-// botonRetroceder.addEventListener("click", () => {
+// let btnRetroceder = document.getElementById("retroceder");
+// btnRetroceder.addEventListener("click", () => {
 //   document.getElementById("root").style.display = "none";
 //   document.getElementById("pag1").style.display = "block";
 // })
 // div_container_play.appendChild(botonRetroceder);
-
 // vista2.appendChild(botonRetroceder);
 //----------------
 const div_container_play = document.createElement('div'); //contenedor grande
@@ -66,16 +65,20 @@ for (let i = 0; i < cards.length; i++) {
          // element.closest(selector) //retorna el elemento padre mas cercano que encuentro con el selector
       
          primeraCartaSeleccionada = e.target.closest('.card');
-         
-          console.log( 'primera carta seleccionada',primeraCartaSeleccionada);
+         console.log( 'primera carta seleccionada',primeraCartaSeleccionada);
           
       } else { // si la primeraCartaSeleccionada no esta vacia estamos volteando la segunda carta
          console.log ('segunda carta',e.target.closest('.card'));
-          e.target.closest('.card').className = 'show';
-          console.log(e.target.closest('.card').className);
+         //  e.target.closest('.card').className = 'show';
+         //  console.log(e.target.closest('.card').className);
          if (primeraCartaSeleccionada.id === e.target.closest('.card').id) {  
             console.log('tarjetas iguales');
-             
+            setTimeout(() => {
+               e.target.closest('.card').className +=' show';
+               // primeraCartaSeleccionada.id='show';
+               // e.target.closest('.card').id='show';
+               primeraCartaSeleccionada = null;
+            })                         
          } else {
             console.log('no son iguales')
             const primeraCarta = primeraCartaSeleccionada;
@@ -83,7 +86,7 @@ for (let i = 0; i < cards.length; i++) {
             setTimeout(() => {
                primeraCarta.classList.remove('show')
                segundaCarta.classList.remove('show')
-            }, 2000)                         
+            }, 1000)                         
 
             primeraCartaSeleccionada = null;
          }
