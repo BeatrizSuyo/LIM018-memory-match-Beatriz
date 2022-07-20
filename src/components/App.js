@@ -1,6 +1,6 @@
 
 
-import pokemon from '../data/pokemon/pokemon.js';
+// import pokemon from '../data/pokemon/pokemon.js';
 // console.log(pokemon);
 
 

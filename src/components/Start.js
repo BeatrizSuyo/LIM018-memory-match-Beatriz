@@ -48,11 +48,11 @@ const Start = () => {
      div_p.appendChild(p2);
      const p3 = document.createElement('p3');
      p3.className = 'p3';
-     p3.innerText = ' 3. Ahora tendrás que buscar dicha imagen volteando otra carta. Si las imágenes son idénticas las cartas se quedarán volteadas, en otro caso se esconderán.';
+     p3.innerText = '3. Ahora tendrás que buscar dicha imagen volteando otra carta. Si las imágenes son idénticas las cartas se quedarán volteadas, en otro caso se esconderán.';
      div_p.appendChild(p3);
      const p4 = document.createElement('p4');
      p4.className = 'p4';
-     p4.innerText = ' 4. Para ganar tendrás que voltear todas las cartas con sus pares.';
+     p4.innerText = '4. Para ganar tendrás que voltear todas las cartas con sus pares.';
      div_p.appendChild(p4);
      
    
