@@ -156,4 +156,16 @@ img {
     border-radius: 1rem;
     width: 12rem;  
 }
-
+.modal {
+    margin: 7rem auto;
+	padding: 2rem;
+	background: #88f807;
+	border-radius: 2rem;
+	width: 60%;
+	position: relative;
+	transition: all 5s ease-in-out;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+/* #end{
+    display: none;
+} */

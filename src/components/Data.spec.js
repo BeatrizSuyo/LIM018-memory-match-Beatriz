@@ -18,8 +18,15 @@ describe('Data', () => {
      it('should render without crashing', () => {
      expect(traerData instanceof HTMLElement).toBe(true);
     });
-    it("Pintar 9 etiquetas de img", () => {
+    //pintar 9 cartas
+    it("Pintar 9 cartas de img", () => {
       let ejecutar = traerData.querySelectorAll('img');
       expect(ejecutar.length).toBe(1);
     })
   });
+  // Shuffle sea una función 
+    describe('shuffle', () => {
+    it('should be a function', () => {
+    expect(typeof shuffle).toBe('function');
+  });
+});
