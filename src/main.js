@@ -62,26 +62,26 @@ for (let i = 0; i < cards.length; i++) {
       cards[i].className +=' show';
       console.log(cards[i].className);
       if (primeraCartaSeleccionada === null) { // si la primeraCartaSeleccionada esta vacia estamos volteando la primera carta
+        
          // element.closest(selector) //retorna el elemento padre mas cercano que encuentro con el selector
-      
          primeraCartaSeleccionada = e.target.closest('.card');
          console.log( 'primera carta seleccionada',primeraCartaSeleccionada);
           
       } else { // si la primeraCartaSeleccionada no esta vacia estamos volteando la segunda carta
          console.log ('segunda carta',e.target.closest('.card'));
-         //  e.target.closest('.card').className = 'show';
+         //  e.target.closest('.card').className = 'show';//cambio de class
          //  console.log(e.target.closest('.card').className);
          if (primeraCartaSeleccionada.id === e.target.closest('.card').id) {  
             console.log('tarjetas iguales');
-            setTimeout(() => {
-               e.target.closest('.card').className +=' show';
-               // primeraCartaSeleccionada.id='show';
-               // e.target.closest('.card').id='show';
-               primeraCartaSeleccionada = null;
-            })                         
+           
+             primeraCartaSeleccionada = null;//reseteando primera carta seleccionada
+
+            gameOver()
+                         
          } else {
             console.log('no son iguales')
             const primeraCarta = primeraCartaSeleccionada;
+            console.log (primeraCarta);
             const segundaCarta = e.target.closest('.card');
             setTimeout(() => {
                primeraCarta.classList.remove('show')
@@ -92,6 +92,23 @@ for (let i = 0; i < cards.length; i++) {
          }
       }
    })
+}
+const end = document.createElement('div');
+end.setAttribute('id','end');
+const modal = document.createElement('section');
+modal.setAttribute('class', 'modal');
+end.appendChild(modal);
+root.appendChild(end);
+
+function gameOver (){
+   const cartasVolteadas = document.querySelectorAll('.card.show').length;
+   if(cartasVolteadas === 2){   
+      // alert('¡Felicitaciones,ganaste 🎉');
+      const message = document.createElement('p')
+      const winner = document.createTextNode('¡Felicitaciones, ganaste 🎉')
+      message.appendChild(winner)
+      modal.appendChild(message)
+   }
 }
 
 
