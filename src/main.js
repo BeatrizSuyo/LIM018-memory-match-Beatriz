@@ -4,29 +4,20 @@
 import Data from './components/Data.js';
 // document.getElementById('root').appendChild(Start());
 // document.getElementById('root').appendChild(App());
-//document.getElementById('root').appendChild(Data());
+// document.getElementById('root').appendChild(Data());
 
 let root = document.getElementById('root');//el contenedor general de nuestra aplicación
-//creando boton jugar GO,vista 1//
+//creando boton jugar GO,vista1
 let btn_jugar = document.getElementById("botonInicial");
 btn_jugar.addEventListener("click", jugar);
 let pageOne = document.getElementById("pag1");
-let pagetwo = document.getElementById("pag2");
-//funcion permite visualizar vista 2//
+let pageTwo = document.getElementById("root");
+//funcion permite visualizar vista2//
 function jugar(){
    pageOne.style.display = "none";
    root.style.display = "block";
 }
-//-------------------bootn retroceder
-// document.getElementById("root").style.display = "none";
-// let btnRetroceder = document.getElementById("retroceder");
-// btnRetroceder.addEventListener("click", () => {
-//   document.getElementById("root").style.display = "none";
-//   document.getElementById("pag1").style.display = "block";
-// })
-// div_container_play.appendChild(botonRetroceder);
-// vista2.appendChild(botonRetroceder);
-//----------------
+
 const div_container_play = document.createElement('div'); //contenedor grande
 div_container_play.className = "div_container_play";
 div_container_play.innerHTML = Data().outerHTML;//escribo sobre el contenedor
@@ -76,7 +67,7 @@ for (let i = 0; i < cards.length; i++) {
            
              primeraCartaSeleccionada = null;//reseteando primera carta seleccionada
 
-            gameOver()
+             gameOver()
                          
          } else {
             console.log('no son iguales')
@@ -95,30 +86,34 @@ for (let i = 0; i < cards.length; i++) {
 }
 const end = document.createElement('div');
 end.setAttribute('id','end');
+end.setAttribute('class', 'end');
 const modal = document.createElement('section');
 modal.setAttribute('class', 'modal');
 end.appendChild(modal);
 root.appendChild(end);
 
 function gameOver (){
+   end.style.display = "block";
    const cartasVolteadas = document.querySelectorAll('.card.show').length;
    if(cartasVolteadas === 2){   
       // alert('¡Felicitaciones,ganaste 🎉');
       const message = document.createElement('p')
-      const winner = document.createTextNode('¡Felicitaciones, ganaste 🎉')
+      const winner = document.createTextNode('¡¡Felicitaciones, ganaste!! 🎉')
       message.appendChild(winner)
       modal.appendChild(message)
    }
 }
 
+//-------------------boton retroceder
+
+let btnRetroceder = document.getElementById("retroceder");
+btnRetroceder.addEventListener("click", () => {
+  pageTwo.style.display = "none";
+  pageOne.style.display = "block";
+})
+vista2.appendChild(btnRetroceder);
 
 
 
 
 
-
-//-------------//al hacer inner al root con finaldeljuego reemplazo todo el root
-// let finalDelJuego = document.createElement('div');
-// finalDelJuego.innerHTML = "vuelve a intentarlo";
-// finalDelJuego.innerHTML = final();
-// root.appendChild(finalDelJuego);
