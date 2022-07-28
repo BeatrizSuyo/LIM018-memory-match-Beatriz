@@ -17,8 +17,8 @@ function jugar(){
    pageOne.style.display = "none";
    root.style.display = "block";
 }
-
-const div_container_play = document.createElement('div'); //contenedor grande 
+//contenedor grande vista 2
+const div_container_play = document.createElement('div');  
 div_container_play.className = "div_container_play";
 div_container_play.innerHTML = Data().outerHTML;//escribo sobre el contenedor
 
@@ -30,7 +30,7 @@ root.appendChild(vista2);
 const img = document.createElement('img');
 img.className = 'imgTitulo';
 img.src = 'titulo Pokemon Match.png';
-img.alt = 'Pokemon Match';
+img.alt = 'Titulo Pokemon Match';
 div_container_play.appendChild(img);
 
  /*     Objetivo:
@@ -45,13 +45,18 @@ div_container_play.appendChild(img);
 
 let primeraCartaSeleccionada = null; 
 let segundaCartaSeleccionada = null;
-let contadorDeCartasIguales = 0;
+let contadorDeCartasIguales = 0;//contador de par de cartas
 const cards = document.querySelectorAll('.card');//validar card
+
+// function click(cards) {
+   
+// }
 for (let i = 0; i < cards.length; i++) {
    cards[i].addEventListener('click', function (e) { //añadiendo evento escuchador a cada card
       
       cards[i].className +=' show';//agregando class show
       // console.log(cards[i].className);
+      
       if (primeraCartaSeleccionada === null) { // si la primeraCartaSeleccionada esta vacia,volteamos la primera carta
          // e.target es el elemento/carta al cual le dimos click
          // element.closest(selector) //retorna el elemento padre mas cercano que encuentro con el selector
@@ -66,16 +71,17 @@ for (let i = 0; i < cards.length; i++) {
          if (primeraCartaSeleccionada.id === segundaCartaSeleccionada.id) {  
             console.log('tarjetas iguales');
             contadorDeCartasIguales = contadorDeCartasIguales+1;
+            //contador de cartas iguales  debe ser 9
             if(contadorDeCartasIguales == 1){
                gameOver()
             } else{primeraCartaSeleccionada = null;
-               segundaCartaSeleccionada = null;
+                   segundaCartaSeleccionada = null;
               }
                             
          } else {
            console.log('no son iguales')
            const primeraCarta = primeraCartaSeleccionada;
-         //   console.log (primeraCarta);
+            //console.log (primeraCarta);
            const segundaCarta = e.target.closest('.card');
            setTimeout(() => {
                primeraCarta.classList.remove('show')
@@ -104,14 +110,14 @@ function gameOver (){
       // alert('¡Felicitaciones,ganaste 🎉');
       const message = document.createElement('p');
       message.setAttribute('class','message');
-      const winner = document.createTextNode(' WINNER  🏆 ');
+      const winner = document.createTextNode(' WINNER '+' 🏆 ');
    
       message.appendChild(winner)
       modal.appendChild(message)
    }
 }
 
-//-------------------boton retroceder
+//---boton retroceder
 
 let btnRetroceder = document.getElementById("retroceder");
 btnRetroceder.addEventListener("click", () => {
