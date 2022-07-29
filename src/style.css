@@ -3,42 +3,39 @@
     margin: 0;
     padding: 0;
 }
-
 #root {
-    display : none;
+    display: none;
 }
 /* Para usar medidas Rem: 1 rem equivale a 10px; */
 html {
     font-size: 62.5%;
 }
-.vista1/*, .vista2*/ {
+.vista1
+/*, .vista2*/
+    {
     display: block;
 }
-
 #pag1 {
-/* display: flex; */
     background-image: url(fondo_pokemon.jpg);
     background-repeat: round;
     background-size: 100%;
     width: 136rem;
     height: 63rem;
     display: grid;
-    background-attachment: fixed;   
+    background-attachment: fixed;
 }
-
 .principal__instucciones {
     color: #6200ff;
     font-family: "Titan One", Titan -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
     font-size: 2.5rem;
     -webkit-text-stroke: 1px black;
     text-align: center;
     padding: 2rem 5rem;
     height: 10rem;
 }
-
-  .instrucciones {
+.instrucciones {
     width: 50%;
     margin: auto;
     padding-right: 15px;
@@ -46,20 +43,19 @@ html {
     padding-top: 15px;
     padding-left: 25px;
     border-radius: 5px;
-    font-family:cursive;
+    font-family: cursive;
     line-height: 125%;
     color: rgb(22, 17, 113);
-    box-shadow: 0.3rem 0.3rem  0.4rem 0.7rem rgb(107, 151, 148);
+    box-shadow: 0.3rem 0.3rem 0.4rem 0.7rem rgb(107, 151, 148);
     background-position: right right;
     font-size: 2rem;
- }
-    
-  .botones {
+}
+.botones {
     width: 0.5rem;
     height: 2rem;
     margin: 8rem;
     margin-bottom: 6rem;
-    margin-left: 50%; 
+    margin-left: 50%;
     padding: 6rem;
     background: url(Ash-Ketchum.png);
     background-repeat: no-repeat;
@@ -67,101 +63,60 @@ html {
     color: #f6fa0f;
     text-align: left;
     font-size: 3.5rem;
-    border:transparent;
+    border: transparent;
     font-family: fantasy;
     font-style: normal;
     text-shadow: -3px -3px 3px #0000DF, 3px -3px 3px #0000DF, -3px 3px 3px #0000DF, 3px 3px 3px #0000DF;
 }
 /*-----vista2--------*/
-
- .div_container_play { 
-    display:flex; 
-    justify-content:flex-start;/*new*/
-    align-items: center;    
+.div_container_play {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     height: 63rem;
     width: 136rem;
     flex-flow: column;
     background-image: url(img.fondo.pokemones.png.jpg);
-    background-repeat:round;
+    background-repeat: round;
     background-size: 100%;
-    /* flex-wrap: wrap;  */
-    /* justify-content: space-between; */
-    /* margin: 1rem; */    
 }
-
 .imgTitulo {
     display: block;
     text-align: center;
-    justify-self:center;
+    justify-self: center;
     width: fit-content;
     height: 8rem;
 }
-
 .contenedor-cards {
-    display: grid;
-    grid-template-columns: repeat(6,minmax(9rem , 1fr) );/*distribuye*/
-    align-items: center;
-    gap: 1rem;
-    /* grid-auto-flow: dense ;
-    grid-auto-rows: 22rem; */
-    grid-template-rows: 9rem 9rem 9rem;
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    row-gap: 5rem;
-    margin-inline: 1.25rem;
-    padding: 1rem;
-    border: 0.1rem transparent  rgb(228, 226, 198);
-    height: 45rem;
-    width: 90rem;
-    background-size: 40rem;
-    background-color:transparent;
-    position: absolute;
-}
-
-.contenedor-cards{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .card {
     transform-style: preserve-3d;
     cursor: pointer;
-    transition: transform 1s;/* el transform tarda 1s en rotar*/
+    transition: transform 1s;
+    /* el transform tarda 1s en rotar*/
 }
-
-.card.show{
+.card.show {
     transform: rotateY(180deg);
 }
-
-.face {
-    width: 15rem;
-    padding: 0.2rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    position: absolute;
-    backface-visibility: hidden;
-}
-
 .back {
-    transform: rotateY(180deg);/*siempre este rotado,de espalda*/
+    transform: rotateY(180deg);
+    /*siempre este rotado,de espalda*/
 }
-
 img {
     border-radius: 1rem;
-    width: 12rem;  
+    width: 12rem;
 }
-
-    
-
 /*----modal--*/
 .end {
     display: none;
-    /* border:  transparent; */
     border: #6200ff;
     width: 40rem;
     height: 35rem;
-    position: fixed;/*Habilitas let, right, top y bottom*/
+    position: fixed;
+    /*Habilitas let, right, top y bottom*/
     left: 0;
     right: 0;
     top: 30px;
@@ -169,74 +124,73 @@ img {
     margin: auto;
     background: url(confetti-2.gif);
 }
-
 .modal {
     display: block;
     margin: 7rem auto;
-	padding: 2rem;
-    background:url(pikachu_gif.gif);
+    padding: 2rem;
+    background: url(pikachu_gif.gif);
     background-repeat: no-repeat;
     background-color: transparent;
-	border-radius: 4rem;
-	width: 100%;
+    border-radius: 4rem;
+    width: 100%;
     height: 70%;
-	position: absolute;
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
-	transition: all 5s ease-in-out;
-	font-family: 'Gloria Hallelujah', cursive;
+    transition: all 5s ease-in-out;
+    font-family: 'Gloria Hallelujah', cursive;
 }
-
 #retroceder {
-   position: absolute; 
-   right: 0;
-   bottom: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 .message {
-    font-size:xx-large;
+    font-size: xx-large;
     text-align-last: right;
-    align-content:center;
+    align-content: center;
     color: #faf20f;
     text-shadow: -3px -3px 3px #0a0a14, 3px -3px 3px #0a0a14, -3px 3px 3px #0a0a14, 3px 3px 3px #0a0a14;
 }
-
-@media only screen and (min-width: 300px){
-    /*@media screen and  (max-width: 768px) {*/
-    /* .div_container_play */
-    .contenedor-cards{
-        grid-column: 1 /-1;
-        background: #000; 
-        display : grid;
-        grid-template-columns: repeat(3,minmax(9rem, 1fr));
-        grid-template-rows: 6rem  6rem 6rem;
-        column-gap: 1rem;
-        padding: 1rem; 
-         
+@media only screen and (min-width: 300px) {
+    .contenedor-cards {
+        margin-top: 350px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 13rem;
+    }
+    .face {
+        width: 1rem;
+        padding: 0.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        position: absolute;
+        backface-visibility: hidden;
     }
 }
-@media only screen and (width: 800px){
-     .contenedor-cards{
-        display : grid;
-        grid-template-columns: repeat(3,minmax(9rem, 1fr));
-        grid-template-rows: 6rem  6rem 6rem;
-        column-gap: 1rem;
-        padding: 1rem; 
-}
-}
-@media only screen and (max-width: 800px){
-    .contenedor-cards{
-        display : grid;
-        grid-template-columns: repeat(3,minmax(9rem, 1fr));
-        grid-template-rows: 6rem  6rem 6rem;
-        column-gap: 1rem;
+@media only screen and (min-width: 800px) {
+    .contenedor-cards {
+        margin-top: 0px;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(9rem, 1fr));
+        align-items: center;
+        gap: 1rem;
+        grid-template-rows: 9rem 9rem 9rem;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        row-gap: 5rem;
         padding: 1rem;
-    
+        border: 0.1rem transparent rgb(228, 226, 198);
+        height: 45rem;
+        width: 90rem;
+        background-size: 40rem;
+        background-color: transparent;
+        position: absolute;
+    }
+    .face {
+        width: 15rem;
+    }
 }
-.card {
-    display : grid;
-} 
-}
-
