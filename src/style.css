@@ -182,6 +182,7 @@ img {
         grid-auto-columns: 1fr;
         grid-auto-rows: 1fr;
         row-gap: 5rem;
+        /* margin-inline: 1.25rem; */
         padding: 1rem;
         border: 0.1rem transparent rgb(228, 226, 198);
         height: 45rem;
