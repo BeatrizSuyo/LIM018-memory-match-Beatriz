@@ -66,13 +66,13 @@ for (let i = 0; i < cards.length; i++) {
       } else { // si la primeraCartaSeleccionada no esta vacia estamos volteando la segunda carta
          console.log ('segunda carta',e.target.closest('.card'));
          segundaCartaSeleccionada =e.target.closest('.card');
-         //  console.log(e.target.closest('.card').className);
+         //  console.log(e.target.closest('.card').className);  //muestra las clases card y show
          
          if (primeraCartaSeleccionada.id === segundaCartaSeleccionada.id) {  
             console.log('tarjetas iguales');
             contadorDeCartasIguales = contadorDeCartasIguales+1;
             //contador de cartas iguales  debe ser 9
-            if(contadorDeCartasIguales == 1){
+            if(contadorDeCartasIguales == 9){
                gameOver()
             } else{primeraCartaSeleccionada = null;
                    segundaCartaSeleccionada = null;
@@ -94,7 +94,7 @@ for (let i = 0; i < cards.length; i++) {
       }
    })
 }
-//creando modal
+//--creando modal
 const end = document.createElement('div');
 end.setAttribute('id','end');
 end.setAttribute('class', 'end');
@@ -106,7 +106,7 @@ root.appendChild(end);
 function gameOver (){
    end.style.display = "block";
    const cartasVolteadas = document.querySelectorAll('.card.show').length;
-   if(cartasVolteadas === 2){   
+   if(cartasVolteadas === 18){   
       // alert('¡Felicitaciones,ganaste 🎉');
       const message = document.createElement('p');
       message.setAttribute('class','message');
@@ -127,6 +127,6 @@ btnRetroceder.addEventListener("click", () => {
 vista2.appendChild(btnRetroceder);
 
 
-
+ 
 
 
