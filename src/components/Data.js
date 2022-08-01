@@ -22,9 +22,9 @@ const Data = () => {
     let img = "";
     let color = "";
     
- 
   
   for (let i = 0; i < sortedPokemon.length; i++) {
+    //====Pasos para crear contenedor de cards===//
     //crear un elemento para la card de pokemon
     //agregar las propiedades de la card de pokemon
     //crear un elemento para la card de pokebola  
@@ -54,69 +54,21 @@ const Data = () => {
     //Creando div "pokebola-cara superior(front face)"  
     const pokebola = document.createElement("div");
     pokebola.className = "face front";
-    //Creando variable para presentar imagen de pokebola
-    const imagenPokebola  = document.createElement("img");
-    imagenPokebola.src = "./img_pokebola_front.png";
-    imagenPokebola.setAttribute("id",name);
-    pokebola.appendChild(imagenPokebola);
 
-    
-    
+    //Creando variable para presentar imagen de pokebola
+    const imagePokebola  = document.createElement("img");
+    imagePokebola.src = "./img_pokebola_front.png";
+    imagePokebola.setAttribute("id",name);
+    pokebola.appendChild(imagePokebola);
+ 
     card.appendChild(pokemon);
     card.appendChild(pokebola);
     cards.appendChild(card);
     
-  
-    
-    
   }
 
-  
-
-  
-  
   return cards;
 }
 
 export default Data;
 
-//Creando div "pokemon -cara posterior(back face)"
-// const pokemon = document.createElement("div");
-// pokemon.className = "face back";
-// pokemon.setAttribute("id", "back");
-//Creando variable para presentar imagen de pokemon
-// const imagePokemon = document.createElement("img");
-//  imagePokemon.src = `${img}`;
-// pokemon.appendChild(imagePokemon);
-
-// Creando div "pokebola-cara superior(front face)"  
-// const pokebola = document.createElement("div");
-// pokebola.className = "face front";
-// Creando variable para presentar imagen de pokebola
-// const imagenPokebola  = document.createElement("img");
-// imagenPokebola.src = "./img_pokebola1.png";
-// pokebola.appendChild(imagenPokebola);
-
-// cards.appendChild(pokemon);
-// cards.appendChild(pokebola);
-
-//---------------------------------------------------------------
-// const pokemon = document.createElement('div');//creando div -cara posterior
-    // pokemon.classList.add('card');
-    // pokemon.style.backgroundColor = color;
-
-    
-    // const pokemonImage = `<img src="${img}" >           
-    // <p class= "pokemon_name">${name.charAt(0).toUpperCase()}${name.slice(1)}</p>`; 
-    // pokemon.innerHTML = pokemonImage 
-    // // const pokemonImage = document.createElement("img");
-    // // imagePokemon.src = `${img}`;    
-    // // pokemon.appendChild(pokemonImage)
-    // //cara superior-img pokebola
-    // const pokebola = `<div class="card" id= "div-${name}">   
-    // <img src="./img_pokebola1.png"  >    
-    // <p class="pokemon_name"></p>                            
-    // </div>`;
-
-    // cards.innerHTML += `${pokemon.outerHTML} ${pokebola}`;//
-    

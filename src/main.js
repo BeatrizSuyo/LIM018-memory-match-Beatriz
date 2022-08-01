@@ -1,12 +1,9 @@
-// import Start from './components/Start.js';
 // import App from './components/App.js';
-// import final from './components/final.js';
 import Data from './components/Data.js';
-// document.getElementById('root').appendChild(Start());
 // document.getElementById('root').appendChild(App());
-// document.getElementById('root').appendChild(Data());
 
-let root = document.getElementById('root');//el contenedor general de nuestra aplicación
+let root = document.getElementById('root');// contenedor general de vista 2
+
 //creando boton jugar GO,vista1
 let btn_jugar = document.getElementById("botonInicial");
 btn_jugar.addEventListener("click", jugar);
@@ -33,29 +30,26 @@ img.src = 'titulo Pokemon Match.png';
 img.alt = 'Titulo Pokemon Match';
 div_container_play.appendChild(img);
 
- /*     Objetivo:
+ /*===Pasos para girar las cartas si son iguales quedan visibles,si no se ocultan====  
         caso 1: Si volteo dos cartas iguales consecutivamente se deben quedar volteadas
         caso 2: Si volteo dos cartas que no son iguales se deben voltear de nuevo
 
-        paso 0: verificar si la carta es la primera o la segunda
+        paso 0: verificar si la carta es la primera 
         paso 1: cuando volteo la primera carta guardo su id
-        paso 2: cuando volteo la segunda carta verifico si el id es el mismo de la primera
+        paso 2: cuando volteo la segunda carta guardo su id,verifico si el id es el mismo de la primera
         paso 3: si es el mismo id se quedan las dos volteadas de cara y si no se voltean ambas de espalda
       */
 
-let primeraCartaSeleccionada = null; 
+let primeraCartaSeleccionada = null; //al inicio no tiene valor
 let segundaCartaSeleccionada = null;
 let contadorDeCartasIguales = 0;//contador de par de cartas
-const cards = document.querySelectorAll('.card');//validar card
+const cards = document.querySelectorAll('.card');//validar card-selecciona todas de clase card
 
-// function click(cards) {
-   
-// }
 for (let i = 0; i < cards.length; i++) {
    cards[i].addEventListener('click', function (e) { //añadiendo evento escuchador a cada card
       
       cards[i].className +=' show';//agregando class show
-      // console.log(cards[i].className);
+      //console.log(cards[i].className);
       
       if (primeraCartaSeleccionada === null) { // si la primeraCartaSeleccionada esta vacia,volteamos la primera carta
          // e.target es el elemento/carta al cual le dimos click
@@ -65,8 +59,8 @@ for (let i = 0; i < cards.length; i++) {
           
       } else { // si la primeraCartaSeleccionada no esta vacia estamos volteando la segunda carta
          console.log ('segunda carta',e.target.closest('.card'));
-         segundaCartaSeleccionada =e.target.closest('.card');
-         //  console.log(e.target.closest('.card').className);  //muestra las clases card y show
+         segundaCartaSeleccionada = e.target.closest('.card');
+         // console.log(e.target.closest('.card').className);  //muestra las clases card y show
          
          if (primeraCartaSeleccionada.id === segundaCartaSeleccionada.id) {  
             console.log('tarjetas iguales');
@@ -94,7 +88,7 @@ for (let i = 0; i < cards.length; i++) {
       }
    })
 }
-//--creando modal
+//creando modal
 const end = document.createElement('div');
 end.setAttribute('id','end');
 end.setAttribute('class', 'end');
@@ -103,6 +97,7 @@ modal.setAttribute('class', 'modal');
 end.appendChild(modal);
 root.appendChild(end);
 
+//funcion juego terminado
 function gameOver (){
    end.style.display = "block";
    const cartasVolteadas = document.querySelectorAll('.card.show').length;
@@ -117,13 +112,13 @@ function gameOver (){
    }
 }
 
-//---boton retroceder
-
+//creando boton retroceder
 let btnRetroceder = document.getElementById("retroceder");
 btnRetroceder.addEventListener("click", () => {
   pageTwo.style.display = "none";
   pageOne.style.display = "block";
 })
+
 vista2.appendChild(btnRetroceder);
 
 

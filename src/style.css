@@ -10,9 +10,7 @@
 html {
     font-size: 62.5%;
 }
-.vista1
-/*, .vista2*/
-    {
+.vista1 {
     display: block;
 }
 #pag1 {
@@ -115,8 +113,7 @@ img {
     border: #6200ff;
     width: 40rem;
     height: 35rem;
-    position: fixed;
-    /*Habilitas let, right, top y bottom*/
+    position: fixed;/*Habilitas let, right, top y bottom*/
     left: 0;
     right: 0;
     top: 30px;
