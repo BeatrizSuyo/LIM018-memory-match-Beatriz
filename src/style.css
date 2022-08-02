@@ -36,11 +36,11 @@ html {
 .instrucciones {
     width: 50%;
     margin: auto;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    padding-left: 25px;
-    border-radius: 5px;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    padding-left: 2.5rem;
+    border-radius: 0.5rem;
     font-family: cursive;
     line-height: 125%;
     color: rgb(22, 17, 113);
@@ -92,7 +92,7 @@ html {
 }
 .card {
     transform-style: preserve-3d;
-    cursor: pointer;
+    cursor:pointer;
     transition: transform 1s;
     /* el transform tarda 1s en rotar*/
 }
@@ -113,7 +113,8 @@ img {
     border: #6200ff;
     width: 40rem;
     height: 35rem;
-    position: fixed;/*Habilitas let, right, top y bottom*/
+    position: fixed;/*respecto al viewport*/
+    /*Habilitas let, right, top y bottom*/
     left: 0;
     right: 0;
     top: 30px;
@@ -131,7 +132,7 @@ img {
     border-radius: 4rem;
     width: 100%;
     height: 70%;
-    position: absolute;
+    position: absolute;/*respecto a su contenedor mas cercano*/
     left: 0;
     right: 0;
     top: 0;
@@ -165,17 +166,17 @@ img {
         text-align: center;
         margin-bottom: 1.5rem;
         position: absolute;
-        backface-visibility: hidden;
+        backface-visibility: hidden;/*oculto*/
     }
 }
 @media only screen and (min-width: 800px) {
     .contenedor-cards {
         margin-top: 0px;
         display: grid;
-        grid-template-columns: repeat(6, minmax(9rem, 1fr));
+        grid-template-columns: repeat(6, minmax(9rem, 1fr));/*el minimo y maximo*/
         align-items: center;
         gap: 1rem;
-        grid-template-rows: 9rem 9rem 9rem;
+        grid-template-rows: 9rem 9rem 9rem;/*plantilla de filas*/
         grid-auto-columns: 1fr;
         grid-auto-rows: 1fr;
         row-gap: 5rem;
